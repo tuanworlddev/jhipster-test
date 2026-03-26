@@ -23,6 +23,8 @@ spring:
 springdoc:
   api-docs:
     enabled: false
+  swagger-ui:
+    enabled: false
 ---
 management:
   endpoints:
@@ -94,7 +96,7 @@ spring:
     name: todo-app
   docker:
     compose:
-      enabled: true
+      enabled: false
       lifecycle-management: start-only
       file: src/main/docker/services.yml
   profiles:
@@ -202,6 +204,24 @@ jhipster:
     license: unlicensed
     license-url:
   security:
+
+---
+# Enable springdoc on api-docs profile
+spring:
+  config:
+    activate:
+      on-profile: api-docs
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    tryItOutEnabled: true
+    filter: true
+    displayRequestDuration: true
 
 
 # jhipster-needle-add-application-yaml-document
