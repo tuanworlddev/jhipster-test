@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "todo-app",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "no",
+    "clientTestFrameworks": null,
+    "clientTheme": null,
+    "creationTimestamp": 1774492558409,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": null,
+    "enableTranslation": false,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "9.0.0",
+    "jwtSecretKey": "ODAxODdmZThlNDdiZGU1NWQ0NzI2MDFmYzhlZWIxYWVhOTVhZDJiOGRlNjFhZDg3NDVjMTNkZDg5MzNlYzkzMzZiZDE0ZGIzNDFlMjMzMjA1NjUxMjNkOGIxZDJjZjE5NTJiMDVjMzAzZDNjM2FjMjU3MzNiNmY5MDQ2YjgyMWE=",
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "en",
+    "packageName": "com.tuandev.todoapp",
+    "prodDatabaseType": "mysql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "skipClient": true,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": null
+  }
+}
