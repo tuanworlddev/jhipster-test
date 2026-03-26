@@ -13,13 +13,13 @@ services:
       - SPRING_LIQUIBASE_URL=jdbc:mysql://mysql:3306/todo-app?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
       - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=JDHFJDKSHFDSHFJAHSDEFJHDSAJKFHEHUYFHIUSHFKJDSHFKSAJDHFUIEDJJEBDFASD
     ports:
-      - 8081:8081
+      - 8080:8080
     healthcheck:
       test:
         - CMD
         - curl
         - -f
-        - http://localhost:8081/management/health
+        - http://localhost:8080/management/health
       interval: 5s
       timeout: 5s
       retries: 40
