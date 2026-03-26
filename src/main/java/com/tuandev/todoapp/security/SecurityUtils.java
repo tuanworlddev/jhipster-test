@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.jwt.Jwt;
  */
 public final class SecurityUtils {
 
-    public static final MacAlgorithm JWT_ALGORITHM = MacAlgorithm.HS512;
+    public static final MacAlgorithm JWT_ALGORITHM = MacAlgorithm.HS384;
 
     public static final String AUTHORITIES_CLAIM = "auth";
 
