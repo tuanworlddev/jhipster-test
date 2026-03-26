@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="20260326100000-1" author="codex">
+        <createTable tableName="todo_task">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(2000)"/>
+            <column name="status" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp"/>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </createTable>
+
+        <createIndex indexName="idx_todo_task_owner_id" tableName="todo_task">
+            <column name="owner_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_todo_task_status" tableName="todo_task">
+            <column name="status"/>
+        </createIndex>
+
+        <addForeignKeyConstraint
+            baseColumnNames="owner_id"
+            baseTableName="todo_task"
+            constraintName="fk_todo_task_owner"
+            referencedColumnNames="id"
+            referencedTableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

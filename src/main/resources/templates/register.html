@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App Register</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body class="auth-shell">
+<main class="auth-card auth-card-wide">
+    <p class="eyebrow">Todo App Demo</p>
+    <h1>Register</h1>
+    <p class="muted">Create your account and start organizing tasks by status right away.</p>
+
+    <div class="alert error" th:if="${registerError}" th:text="${registerError}"></div>
+
+    <form method="post" th:action="@{/register}" th:object="${registerForm}" class="stack">
+        <div class="grid-two">
+            <label>
+                <span>First name</span>
+                <input type="text" th:field="*{firstName}">
+            </label>
+            <label>
+                <span>Last name</span>
+                <input type="text" th:field="*{lastName}">
+            </label>
+        </div>
+        <label>
+            <span>Username</span>
+            <input type="text" th:field="*{login}">
+        </label>
+        <label>
+            <span>Email</span>
+            <input type="email" th:field="*{email}">
+        </label>
+        <label>
+            <span>Password</span>
+            <input type="password" th:field="*{password}">
+        </label>
+        <button type="submit">Create account</button>
+    </form>
+
+    <p class="switch-link">Already registered? <a th:href="@{/login}">Back to login</a></p>
+</main>
+</body>
+</html>
